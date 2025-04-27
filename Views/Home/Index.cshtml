@@ -1,36 +1,42 @@
+@using Homework_SkillTree.Commons.Enums
+@model HomeViewModel;
+
 @{
     ViewData["Title"] = "Home Page";
+    var sequence = 1;
 }
 <div class="container mt-4">
     <div class="card bg-light">
         <div class="card-body">
-            <form>
+            <form asp-action="Index">
                 <div class="row mb-3">
                     <label for="category" class="col-sm-2 col-form-label">類別</label>
                     <div class="col-sm-10">
-                        <select id="category" class="form-select">
+                        <select asp-for="Input.Category" asp-items="Html.GetEnumSelectList<AccountingCategoryEnum>()" id="category" class="form-select">
                             <option value="" selected>請選擇</option>
-                            <option>支出</option>
-                            <option>收入</option>
                         </select>
+                        <span asp-validation-for="Input.Category" style="color: red"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="money" class="col-sm-2 col-form-label">金額</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="money" placeholder="金額">
+                        <input asp-for="Input.Money" type="text" class="form-control" id="money" placeholder="金額">
+                        <span asp-validation-for="Input.Money" style="color: red"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="date" class="col-sm-2 col-form-label">日期</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="date" placeholder="日期">
+                        <input asp-for="Input.Date" type="text" class="form-control" id="date" placeholder="日期">
+                        <span asp-validation-for="Input.Date" style="color: red"></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="description" class="col-sm-2 col-form-label">備註</label>
+                    <span asp-validation-for="Input.Description" style="color: red"></span>
                     <div class="col-sm-10">
-                        <textarea class="form-control" id="description" rows="3"></textarea>
+                        <textarea asp-for="Input.Description" class="form-control" id="description" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -54,24 +60,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                @foreach (var value in Model.HomeDataModels)
+                {
                     <tr>
-                        <td>1</td>
-                        <td>支出</td>
-                        <td>2025-01-01</td>
-                        <td>300</td>
+                        <td asp>@sequence</td>
+                        <td>
+                            @Html.Raw(((AccountingCategoryEnum)value.Category).ToString()) 
+                        </td>
+                        <td>@value.Date.ToString("yyyy-MM-dd")</td>
+                        <td>@value.Money</td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>支出</td>
-                        <td>2025-01-02</td>
-                        <td>1,600</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>支出</td>
-                        <td>2025-01-03</td>
-                        <td>8,00</td>
-                    </tr>
+                    sequence++;
+                }
                 </tbody>
             </table>
         </div>
