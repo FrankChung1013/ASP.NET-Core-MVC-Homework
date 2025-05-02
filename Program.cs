@@ -1,12 +1,19 @@
+using Homework_SkillTree;
 using Homework_SkillTree.DBModels;
+using Mapster;
+using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<MvctutorialContext>(options =>
+builder.Services.AddServices();
+builder.Services.AddRepositories();
+builder.Services.AddDbContext<SkillTreeHomeworkDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionStrings:DefaultConnection")));
+builder.Services.AddMapster();
+MapsterConfig.Configure();
 
 var app = builder.Build();
 

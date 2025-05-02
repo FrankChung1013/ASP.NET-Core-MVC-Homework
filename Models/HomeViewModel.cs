@@ -6,7 +6,7 @@ namespace Homework_SkillTree.Models;
 
 public class HomeViewModel
 {
-    public HomeDataModel Input { get; set; } = new HomeDataModel();
+    public HomeDataModel Input { get; set; } = new();
 
     public List<Accounting> HomeDataModels { get; set; } = [];
 }
@@ -38,5 +38,19 @@ public class HomeDataModel
     /// 備註
     /// </summary>
     [StringLength(1000, ErrorMessage = "備註不可超過1000字")]
+    public string? Description { get; set; }
+}
+
+/// <summary>
+/// 原本使用的EF的Model，因為老師表示作業不可改變資料結構，所以拿過來使用
+/// </summary>
+public class Accounting
+{
+    public int Category { get; set; }
+
+    public int Money { get; set; }
+
+    public DateTime Date { get; set; }
+
     public string? Description { get; set; }
 }
