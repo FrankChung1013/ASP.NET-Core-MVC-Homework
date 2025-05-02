@@ -9,14 +9,18 @@ namespace Homework_SkillTree.Controllers
     {
         private readonly ILogger<HomeController> _logger = logger;
 
-        [HttpGet]
-        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(HomeViewModel? viewModel)
         {
+            viewModel ??= new HomeViewModel();
+            //  暫時綁定每頁10筆
+            var pageSize = 10;
             
-            return View(new HomeViewModel
-            {
-                HomeDataModels = await service.GetAccountBooksAsync(pageNumber, pageSize)
-            });
+            viewModel.HomeDataModels = 
+                await service.GetAccountBooksAsync(viewModel.CurrentPage, pageSize);
+            
+            viewModel.TotalPages = (await service.GetAccountBooksCountAsync()) / pageSize;
+            
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

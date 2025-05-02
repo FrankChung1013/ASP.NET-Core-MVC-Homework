@@ -21,4 +21,6 @@ public class BaseRepository<T>(SkillTreeHomeworkDbContext context) : IRepository
     public void Delete(T entity) => _dbSet.Remove(entity);
     
     public void DeleteRange(IEnumerable<T> entities) => _dbSet.RemoveRange(entities);
+    
+    public async Task<int> GetCountAsync() => await _dbSet.CountAsync();
 }

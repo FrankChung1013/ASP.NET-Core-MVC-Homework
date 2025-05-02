@@ -8,4 +8,6 @@ public class HomeRepository(IRepository<AccountBook> repository) : IHomeReposito
 {
     public async Task<List<AccountBook>> GetAccountBooksWithPaginationAsync(int pageNumber, int pageSize) =>
         await repository.FindAsQueryable().Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
+    
+    public async Task<int> GetAccountBooksCountAsync() => await repository.GetCountAsync();
 }

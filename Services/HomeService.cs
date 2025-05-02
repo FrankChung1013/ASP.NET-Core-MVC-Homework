@@ -14,4 +14,7 @@ public class HomeService(IHomeRepository repository, IMapper mapper, ILogger<Hom
 
         return mapper.Map<List<Accounting>>(accountBooks);
     }
+    
+    public async Task<int> GetAccountBooksCountAsync() =>
+        await repository.GetAccountBooksCountAsync();
 }

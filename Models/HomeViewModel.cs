@@ -9,6 +9,8 @@ public class HomeViewModel
     public HomeDataModel Input { get; set; } = new();
 
     public List<Accounting> HomeDataModels { get; set; } = [];
+    public int CurrentPage { get; set; } = 1;
+    public int TotalPages { get; set; } = 0;
 }
 
 public class HomeDataModel

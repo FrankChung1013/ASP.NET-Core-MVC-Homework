@@ -9,4 +9,5 @@ public interface IRepository<T> where T : class
     void UpdateRange(IEnumerable<T> entities);
     void Delete(T entity);
     void DeleteRange(IEnumerable<T> entities);
+    Task<int> GetCountAsync();
 }

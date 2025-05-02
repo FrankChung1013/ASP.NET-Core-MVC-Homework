@@ -6,74 +6,107 @@
     var sequence = 1;
 }
 <div class="container mt-4">
-    <div class="card bg-light">
-        <div class="card-body">
-            <form asp-action="Index">
-                <div class="row mb-3">
-                    <label for="category" class="col-sm-2 col-form-label">類別</label>
-                    <div class="col-sm-10">
-                        <select asp-for="Input.Category" asp-items="Html.GetEnumSelectList<AccountingCategoryEnum>()" id="category" class="form-select">
-                            <option value="" selected>請選擇</option>
-                        </select>
-                        <span asp-validation-for="Input.Category" style="color: red"></span>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="money" class="col-sm-2 col-form-label">金額</label>
-                    <div class="col-sm-10">
-                        <input asp-for="Input.Money" type="text" class="form-control" id="money" placeholder="金額">
-                        <span asp-validation-for="Input.Money" style="color: red"></span>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="date" class="col-sm-2 col-form-label">日期</label>
-                    <div class="col-sm-10">
-                        <input asp-for="Input.Date" type="text" class="form-control" id="date" placeholder="日期">
-                        <span asp-validation-for="Input.Date" style="color: red"></span>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="description" class="col-sm-2 col-form-label">備註</label>
-                    <span asp-validation-for="Input.Description" style="color: red"></span>
-                    <div class="col-sm-10">
-                        <textarea asp-for="Input.Description" class="form-control" id="description" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-10 offset-sm-2">
-                        <button type="submit" class="btn btn-primary">送出</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
+    @* <div class="card bg-light"> *@
+    @*     <div class="card-body"> *@
+    @*         <form asp-action="Index"> *@
+    @*             <div class="row mb-3"> *@
+    @*                 <label for="category" class="col-sm-2 col-form-label">類別</label> *@
+    @*                 <div class="col-sm-10"> *@
+    @*                     <select asp-for="Input.Category" asp-items="Html.GetEnumSelectList<AccountingCategoryEnum>()" id="category" class="form-select"> *@
+    @*                         <option value="" selected>請選擇</option> *@
+    @*                     </select> *@
+    @*                     <span asp-validation-for="Input.Category" style="color: red"></span> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*             <div class="row mb-3"> *@
+    @*                 <label for="money" class="col-sm-2 col-form-label">金額</label> *@
+    @*                 <div class="col-sm-10"> *@
+    @*                     <input asp-for="Input.Money" type="text" class="form-control" id="money" placeholder="金額"> *@
+    @*                     <span asp-validation-for="Input.Money" style="color: red"></span> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*             <div class="row mb-3"> *@
+    @*                 <label for="date" class="col-sm-2 col-form-label">日期</label> *@
+    @*                 <div class="col-sm-10"> *@
+    @*                     <input asp-for="Input.Date" type="text" class="form-control" id="date" placeholder="日期"> *@
+    @*                     <span asp-validation-for="Input.Date" style="color: red"></span> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*             <div class="row mb-3"> *@
+    @*                 <label for="description" class="col-sm-2 col-form-label">備註</label> *@
+    @*                 <span asp-validation-for="Input.Description" style="color: red"></span> *@
+    @*                 <div class="col-sm-10"> *@
+    @*                     <textarea asp-for="Input.Description" class="form-control" id="description" rows="3"></textarea> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*             <div class="row"> *@
+    @*                 <div class="col-sm-10 offset-sm-2"> *@
+    @*                     <button type="submit" class="btn btn-primary">送出</button> *@
+    @*                 </div> *@
+    @*             </div> *@
+    @*         </form> *@
+    @*     </div> *@
+    @* </div> *@
 
-    <div class="row mt-4">
-        <div class="col-md-12">
-            <table class="table table-bordered table-hover">
-                <thead class="table-light">
+    <form asp-action="Index">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <table class="table table-bordered table-hover">
+                    <thead class="table-light">
                     <tr>
                         <th>#</th>
                         <th>類別</th>
                         <th>日期</th>
                         <th>金額</th>
                     </tr>
-                </thead>
-                <tbody>
-                @foreach (var value in Model.HomeDataModels)
-                {
-                    <tr>
-                        <td asp>@sequence</td>
-                        <td>
-                            @Html.Raw(((AccountingCategoryEnum)value.Category).ToString()) 
-                        </td>
-                        <td>@value.Date.ToString("yyyy-MM-dd")</td>
-                        <td>@value.Money</td>
-                    </tr>
-                    sequence++;
-                }
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    @foreach (var value in Model.HomeDataModels)
+                    {
+                        <tr>
+                            <td>@sequence</td>
+                            <td>
+                                @Html.Raw(((AccountingCategoryEnum)value.Category).ToString())
+                            </td>
+                            <td>@value.Date.ToString("yyyy-MM-dd")</td>
+                            <td>@value.Money</td>
+                        </tr>
+                        sequence++;
+                    }
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+        <div class="row mt-4">
+            <div class="d-flex justify-content-center">
+                <nav>
+                    <ul class="pagination">
+                        @if (Model.CurrentPage > 1)
+                        {
+                            <li class="page-item">
+                                <button type="submit" name="currentPage" value="@(Model.CurrentPage - 1)"
+                                        class="page-link">Previous
+                                </button>
+                            </li>
+                        }
+                        @for (var i = Math.Max(1, Model.CurrentPage - 2); i <= Math.Min(Model.TotalPages, Model.CurrentPage + 2); i++)
+                        {
+                            <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                <button type="submit" name="currentPage" value="@i" class="page-link">@i</button>
+                            </li>
+                        }
+                        @if (Model.CurrentPage < Model.TotalPages)
+                        {
+                            <li class="page-item">
+                                <button type="submit" name="currentPage" value="@(Model.CurrentPage + 1)"
+                                        class="page-link">Next
+                                </button>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </form>
+    
 </div>
