@@ -19,13 +19,12 @@ public class HomeDataModel
     /// 支出類別
     /// </summary>
     [Required(ErrorMessage = "請選擇類別")]
-    [Range(0, 1)]
     public AccountingCategoryEnum? Category { get; set; }
 
     /// <summary>
     /// 金額
     /// </summary>
-    [Range(0, double.MaxValue, ErrorMessage = "金額輸入錯誤")]
+    [Range(0, int.MaxValue, ErrorMessage = "金額輸入錯誤")]
     [Required(ErrorMessage = "請輸入金額")]
     public int? Money { get; set; }
 
