@@ -1,4 +1,11 @@
+src/Homework-SkillTree.Api/global.json
 .idea/
-.vs/
-bin/
-obj/
+src/Homework-SkillTree.Api/Homework-SkillTree.Api.sln.DotSettings.user
+src/Homework-SkillTree.Api/Homework-SkillTree.Api/bin/
+src/Homework-SkillTree.Api/Homework-SkillTree.Api/obj/
+src/Homework-SkillTree.Api/Homework-SkillTree.Application/bin/
+src/Homework-SkillTree.Api/Homework-SkillTree.Application/obj/
+src/Homework-SkillTree.Api/Homework-SkillTree.Domain/bin/
+src/Homework-SkillTree.Api/Homework-SkillTree.Domain/obj/
+src/Homework-SkillTree.Api/Homework-SkillTree.Infrastructure/bin/
+src/Homework-SkillTree.Api/Homework-SkillTree.Infrastructure/obj/

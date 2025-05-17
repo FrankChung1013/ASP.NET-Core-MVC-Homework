@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework-SkillTree.Api", "Homework-SkillTree.Api\Homework-SkillTree.Api.csproj", "{3622DE64-74BA-4524-B6C7-A1BEC66EE397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework-SkillTree.Application", "Homework-SkillTree.Application\Homework-SkillTree.Application.csproj", "{DC827053-E554-4F05-B224-83095DD64E89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework-SkillTree.Infrastructure", "Homework-SkillTree.Infrastructure\Homework-SkillTree.Infrastructure.csproj", "{305CC85E-BA93-4648-9A0E-B0E9017579CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework-SkillTree.Domain", "Homework-SkillTree.Domain\Homework-SkillTree.Domain.csproj", "{72612D44-2B5F-40C2-833D-EE9EE8C74F17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3622DE64-74BA-4524-B6C7-A1BEC66EE397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3622DE64-74BA-4524-B6C7-A1BEC66EE397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3622DE64-74BA-4524-B6C7-A1BEC66EE397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3622DE64-74BA-4524-B6C7-A1BEC66EE397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC827053-E554-4F05-B224-83095DD64E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC827053-E554-4F05-B224-83095DD64E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC827053-E554-4F05-B224-83095DD64E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC827053-E554-4F05-B224-83095DD64E89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305CC85E-BA93-4648-9A0E-B0E9017579CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305CC85E-BA93-4648-9A0E-B0E9017579CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305CC85E-BA93-4648-9A0E-B0E9017579CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305CC85E-BA93-4648-9A0E-B0E9017579CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72612D44-2B5F-40C2-833D-EE9EE8C74F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72612D44-2B5F-40C2-833D-EE9EE8C74F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72612D44-2B5F-40C2-833D-EE9EE8C74F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72612D44-2B5F-40C2-833D-EE9EE8C74F17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
