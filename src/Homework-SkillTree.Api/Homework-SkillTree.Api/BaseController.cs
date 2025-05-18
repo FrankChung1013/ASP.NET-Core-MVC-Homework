@@ -1,12 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Homework_SkillTree.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Homework_SkillTree.Api;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
+[Authorize]
 public class BaseController(ILogger logger) : ControllerBase
 {
     protected async Task<IActionResult> ExecuteAsync<TResponse>(Task<TResponse> taskExecute)
